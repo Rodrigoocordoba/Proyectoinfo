@@ -18,7 +18,7 @@ from django.urls import path, include
 
 from . import views #de la misma carpeta en la que estoy importar el archivo views
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), #para crear el superusuario o admin es python manage.py createsuperuser
     #URL PRINCIPAL
     path('',views.Home, name = 'home'), #url para el home, significa que si viene vacio '' entonces me direcciona hacia el home
 

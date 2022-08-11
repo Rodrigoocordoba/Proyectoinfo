@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
 INSTALLED_APPS = [ #aca estan todas las aplicaciones que vienen de django y las que agregamos nosotros
-    'django.contrib.admin',
+    'django.contrib.admin', #este seria el admin en las aplicaciones
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
