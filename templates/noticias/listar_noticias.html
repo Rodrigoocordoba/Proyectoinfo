@@ -1,7 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<!-- como son objetos para acceder a sus campos seria a traves de puntos, ej en categoria para acceder a su descripcion seria n.categoria.descripcion -->
+<!-- Se usa {%% cuando es una accion, for if, etc y {{} es cuando es una variable y hay que mostrar su contenido -->
 {% block contenido %}
-    <h2>SOY LA PANTALLA DE LISTAR NOTICIAS</h2>
+    <h1> NOTICIAS ACTUALES</h1>
     <br>
+
+    {% for n in notis %}
+        <h2>{{ n.titulo}} </h2>
+
+        <p>Categoria: {{n.categoria}}</p>
+        <p>Descripcion: {{n.categoria.descripcion}}</p>
+        {% if n.imagen %}
+            <p>AUTOR: {{ n.autor }} </p>
+        {% endif%}
+        
+        <p>CUERPO: {{n.cuerpo}} </p>
+
+        {% if n.imagen %}
+            <img src="{{ n.imagen.url }}" width = "100px" height = "100px">
+        {% else %}
+            <p>NO TIENE IMAGEN</p>
+        {% endif%}
+
+    {% endfor %}
 {% endblock contenido %}
+
+<!-- para mostrar una imagen se usa img con el doble corchete y el .url es algo que se pone por defecto que hace transformar esa imagen en una url valida -->
+

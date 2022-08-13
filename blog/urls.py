@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf.urls.static import static #estas dos importaciones son para que la imagen aparezca en la pagina
+from django.conf import settings 
+
 from . import views #de la misma carpeta en la que estoy importar el archivo views
 urlpatterns = [
     path('admin/', admin.site.urls), #para crear el superusuario o admin es python manage.py createsuperuser
@@ -24,4 +27,4 @@ urlpatterns = [
 
     #URL DE APLICACIONES
     path('Noticias/',include('apps.noticias.urls')), # siempre que venga en el url noticias me redirecciona hacia mi apps de noticias
-]
+] + static (settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) #ESTO VA CON LAS DOS IMPORTACIONES QUE AGREGAMOS ULTIMAS PARA QUE SE VISUALICE LA IMAGEN (va en la llave que ciera url patterns)
