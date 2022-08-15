@@ -1,0 +1,30 @@
+
+Esta linea de codigos es cuando el profe explico como hacer las direcciones para que nos diriga a distintas pestañas, la borro porque la conecte con bootstrap
+
+<div class="div-menu">
+            <!-- <img src="{% static 'img/logo.png' %}" width="200" height="200"> aca iba como ejemplo la imagen para el logo -->
+            <div class = "div-menu">
+                <a href="{% url 'noticias:listar_noticias' %}">IR A LISTAR NOTICIAS</a>
+                <a href="{% url 'home' %}">HOME</a>
+            </div>
+        </div>
+
+
+para mostrar todo el listado de noticias:
+
+<h2>{{ n.titulo}} </h2>
+
+        <p>Categoria: {{n.categoria}}</p>
+        <p>Descripcion: {{n.categoria.descripcion}}</p>
+        {% if n.imagen %}
+            <p>AUTOR: {{ n.autor }} </p>
+        {% endif%}
+            
+        <p>CUERPO: {{n.cuerpo}} </p>
+
+        {% if n.imagen %}
+            <img src="{{ n.imagen.url }}" width = "100px" height = "100px">
+        {% else %}
+            <p>NO TIENE IMAGEN</p>
+        {% endif%}
+

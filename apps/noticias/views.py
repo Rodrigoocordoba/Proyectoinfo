@@ -11,7 +11,7 @@ def Listar(request):
     print(todas) #para saber que lo de arriba anda hacemos un print
     #PASARLO AL TEMPLATE
     ctx['notis'] = todas
-    return render(request,'noticias/listar_noticias.html', ctx) #aca lo que le digo es que el html se va a encontrar dentro de la carpeta noticias y se utiliza / para señalar
+    return render(request,'noticias/listar_noticias.html', ctx, ) #aca lo que le digo es que el html se va a encontrar dentro de la carpeta noticias y se utiliza / para señalar
 
 
 
