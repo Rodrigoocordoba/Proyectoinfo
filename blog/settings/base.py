@@ -27,6 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
+#Le digo a django que luego de loguear al usuario lo mande al home
+
+LOGIN_REDIRECT_URL =reverse_lazy('home')
+LOGOUT_REDIRECT_URL =reverse_lazy('home') #aca le digo que despues de desloguearme lo mando al home
+
+
 INSTALLED_APPS = [ #aca estan todas las aplicaciones que vienen de django y las que agregamos nosotros
     'django.contrib.admin', #este seria el admin en las aplicaciones
     'django.contrib.auth',

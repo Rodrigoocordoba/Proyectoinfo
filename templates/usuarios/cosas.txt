@@ -1,0 +1,18 @@
+  
+  como mostrar el la barra de navegacion
+
+  <div class="div-menu">
+        <div class="div-menu">
+            <a href="{% url 'noticias:listar_noticias' %}">ir a listar noticias</a>
+            <a href="{% url 'home' %}">home</a>
+
+            {% if user.is_authenticated %}
+                <span>hola {{user.username}}!!</span>
+                <a href="{% url 'logout' %}">salir</a>
+            {% else %}
+                <a href="{% url 'login' %}">login</a>
+            {% endif %}
+
+        </div>
+
+    </div>

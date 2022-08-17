@@ -20,7 +20,8 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ n.titulo}}</h5>
                                             <p class="card-text">{{n.cuerpo}}</p>
-                                            <a href="#" class="btn btn-primary">Ver más</a>
+                                            <a href="{% url 'noticias:detalle_noticia' n.pk %}" class="btn btn-primary">Ver más</a>
+                                            <!--Luego de pasarle por parametro la variable llamada pk, tengo que ponerla en el url para que me redireccione a la misma noticia-->
                                         </div>
                                     </div>
                                 </div>

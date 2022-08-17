@@ -19,11 +19,18 @@ from django.urls import path, include
 from django.conf.urls.static import static #estas dos importaciones son para que la imagen aparezca en la pagina
 from django.conf import settings 
 
+#URL LOGIN
+from django.contrib.auth import views as auth
+
 from . import views #de la misma carpeta en la que estoy importar el archivo views
 urlpatterns = [
     path('admin/', admin.site.urls), #para crear el superusuario o admin es python manage.py createsuperuser
     #URL PRINCIPAL
     path('',views.Home, name = 'home'), #url para el home, significa que si viene vacio '' entonces me direcciona hacia el home
+
+    #agrego el path del login
+    path('login/',auth.LoginView.as_view(template_name = 'usuarios/login.html'), name = 'login'),
+    path('logout/',auth.LogoutView.as_view(), name = 'logout'),
 
     #URL DE APLICACIONES
     path('Noticias/',include('apps.noticias.urls')), # siempre que venga en el url noticias me redirecciona hacia mi apps de noticias

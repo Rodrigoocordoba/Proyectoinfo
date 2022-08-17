@@ -13,22 +13,20 @@
 <body>
 
     <!-- MENU -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
-        <div class="container-fluid">
-                <button type="button" class="btn btn-outline-primary" style ="margin-right: 5px;">
-                    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-                </button>
-                <button type="button" class="btn btn-outline-primary">
-                    <a class="navbar-brand" href="{% url 'noticias:listar_noticias' %}">Listar Noticias</a>
-                </button>
-            <ul class="navbar-nav ms-auto">
-                <!--Lo que me hace el ms-auto es mandarme a la izquierda la barra de navegacion por defecto,  -->
-                <button type="button" class="btn btn-outline-primary">
-                    <a class="navbar-brand" href="">Salir</a>
-                </button>
-            </ul>
+
+    <div class="div-menu">
+        <div class="div-menu">
+            <a href="{% url 'noticias:listar_noticias' %}">ir a listar noticias</a>
+            <a href="{% url 'home' %}">home</a>
+            {% if user.is_authenticated %}
+                <span>hola {{user.username}}!!</span>
+                <a href="{% url 'logout' %}">salir</a>
+            {% else %}
+                <a href="{% url 'login' %}">login</a>
+            {% endif %}
         </div>
-    </nav>
+    </div>
+
     <!--FIN MENU -->
     {% block contenido %}
 

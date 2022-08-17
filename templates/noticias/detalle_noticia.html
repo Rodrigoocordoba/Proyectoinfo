@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block contenido %}
+    <br><br>
+        <h1>{{object.titulo}}</h1> <br><br>
+        <!--Por ultimo para mostrar con la vista basada en clase en vez de poner el nombre de la lista ej resultado, n, se pone object que seria el objeto de la clase-->
+            {% if object.imagen %}
+                <img src="{{ object.imagen.url }}" width = "300px" height = "300px">
+            {% endif%}
+            <h2>{{object.cuerpo}}</h2>
+        
+    {% endblock contenido %} 
+

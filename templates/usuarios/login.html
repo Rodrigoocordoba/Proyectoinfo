@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <!--El metodo post lo que hace es enviar informacion oculta, a diferencia que viaje por url esta es secreta la informacion-->
+    <form method="POST"> {%csrf_token%} 
+        {{form.errors}} 
+        <!--esta es una variable por defecto que me muestra si es incorrecto el login-->
+        <input type="text" name="username" placeholder="USUARIO">
+        <input type = "password" name="password" placeholder="PASSWORD">
+        
+        <input type = "submit" name="" value="ENVIAR">
+    </form>
+{% endblock %}

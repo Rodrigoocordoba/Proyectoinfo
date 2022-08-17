@@ -28,3 +28,7 @@ para mostrar todo el listado de noticias:
             <p>NO TIENE IMAGEN</p>
         {% endif%}
 
+
+SIEMPRE QUE QUIERO AGREGAR UNA NUEVA PANTALLA TENGO QUE HACER UNA URL, UNA VISTA Y UN TEMPLATE
+
+
